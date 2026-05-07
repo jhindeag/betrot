@@ -1,11 +1,19 @@
+import Image from "next/image";
 export interface ProductType {
+  name: string;
   src: string;
 }
 
 export function Product(props: ProductType) {
   return (
     <article>
-      <img src={props.src} width={"250px"} height={"auto"}></img>
+      <Image
+        src={`/` + props.src}
+        width={250}
+        height={250}
+        alt={"Picture of product"}
+      />
+      <div>{props.name}</div>
     </article>
   );
 }
